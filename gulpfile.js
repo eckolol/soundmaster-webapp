@@ -4,12 +4,12 @@ var gulp = require('gulp'),
     karma = require('gulp-karma');
 
 var testFiles = [
-  'public/bower_components/angular/angular.js',
-  'public/bower_components/angular-socket-io/mock/socket-io.js',
-  'public/bower_components/angular-mocks/angular-mocks.js',
-  'public/bower_components/angular-socket-io/socket.js',
-  'public/js/app.js',
-  'public/test/*.spec.js'
+  'app/bower_components/angular/angular.js',
+  'app/bower_components/angular-socket-io/mock/socket-io.js',
+  'app/bower_components/angular-mocks/angular-mocks.js',
+  'app/bower_components/angular-socket-io/socket.js',
+  'app/scripts/app.js',
+  'test/*.spec.js'
 ];
 
 gulp.task('test', function() {
