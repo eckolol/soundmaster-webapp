@@ -2,13 +2,26 @@
 <header class="bar bar-nav">
   <h1 class="title">SoundMaster</h1>
 </header>
-
+<div class="bar bar-standard bar-header-secondary">
+  <form>
+    <input ng-model="searchSong" type="search" placeholder="Search" ng-keyup="search()">
+  </form>
+</div>
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
   <div class="card">
-    <ul class="table-view">
+    <ul class="table-view" ng-repeat="video in videos">
       <li class="table-view-cell">
-        <strong>Search</strong>
+        <a href="" data-transition="slide-in" ng-click="addSong(video.id.$t)">
+          <div>
+            <img style="float:left; width:40px; height:40px; margin-right:10px;"class="movieimg" ng-src="{{video.media$group.media$thumbnail[0].url}}" />
+            <p style="font-size:12px;">By {{video.author[0].name.$t}}</p>
+            <strong style="font-size:12px;">{{video.media$group.media$title.$t}}</strong>
+            <span class="chevron"></span>
+          </div>
+          <div style="clear:both;">
+          </div>
+        </a>
       </li>
     </ul>
   </div>
