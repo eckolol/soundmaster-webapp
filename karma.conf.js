@@ -6,14 +6,16 @@ module.exports = function (config) {
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-socket-io/mock/socket-io.js',
+      'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/angular-socket-io/socket.js',
-      'app/scripts/app.js',
+      'app/scripts/*.js',
+      'app/scripts/**/*.js',
       'test/*.spec.js'
     ],
 
     preprocessors: {
-      'app/scripts/app.js': ['coverage']
+      'app/scripts/*.js': ['coverage']
     },
 
     reporters: ['progress', 'coverage'],

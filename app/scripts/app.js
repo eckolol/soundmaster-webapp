@@ -1,15 +1,32 @@
 //'use strict';
 angular.module('soundMaster', [
+  'ngRoute',
   'btford.socket-io'
 ]).
 factory('soundSocket', function (socketFactory) {
-  return socketFactory();
-}).
-controller('AppCtrl', function ($scope, soundSocket) {
-  $scope.play = function() {
+  var soundmasterIoSocket = io.connect('http://localhost:1337');
+  
+  soundmasterSocket = socketFactory({
+    ioSocket: soundmasterIoSocket
+  });
 
-    soundSocket.emit('playStream', {
-      type: 'youtube', stream: 'fxa0BneKsF4'
+  return soundmasterSocket;
+}).
+config(function ($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl'
+    })
+    .when('/search', {
+      templateUrl: 'views/search.html',
+      controller: 'SearchCtrl'
+    })
+    .when('/poc', {
+      templateUrl: 'views/poc.html',
+      controller: 'PocCtrl'
+    })
+    .otherwise({
+      redirectTo: '/'
     });
-  };
 });

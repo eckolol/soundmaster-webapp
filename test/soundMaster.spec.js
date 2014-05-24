@@ -4,13 +4,13 @@ describe('soundMaster', function () {
   // load the controller's module
   beforeEach(module('soundMaster'));
 
-  var AppCtrl,
+  var PocCtrl,
       scope;
 
   //Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AppCtrl = $controller('AppCtrl', {
+    PocCtrl = $controller('PocCtrl', {
       $scope: scope
     });
   }));
