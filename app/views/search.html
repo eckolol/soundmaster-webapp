@@ -15,7 +15,7 @@
     <ul class="table-view">
       <li class="table-view-cell table-view-divider">Résultat</li>
       <li class="table-view-cell media" ng-repeat="video in videos">
-        <a class="navigate-right" href="" data-transition="slide-in" ng-click="addSong(video.id.$t)">
+        <a class="navigate-right" href="" data-transition="slide-in" ng-click="addSong(video)">
           <img style="width:64px" class="media-object pull-left" ng-src="{{video.media$group.media$thumbnail[0].url}}" />
           <div class="media-body">
             By {{video.author[0].name.$t}}

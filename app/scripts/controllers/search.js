@@ -18,10 +18,9 @@ angular.module('soundMaster')
     }
   };
 
-  $scope.addSong = function(id) {
-    id = id.substring(42);
+  $scope.addSong = function(video) {
     soundSocket.emit('playStream', {
-      type: 'youtube', stream: id
+      type: 'youtube', stream: video
     });
   };
 

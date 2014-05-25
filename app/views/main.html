@@ -5,13 +5,21 @@
 
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
-  <div class="card">
+
     <ul class="table-view">
-      <li class="table-view-cell">
-        <strong>Vote</strong>
+      <li class="table-view-cell table-view-divider">Playlist</li>
+      <li class="table-view-cell media" ng-repeat="video in videos">
+        <a class="navigate-right" href="" data-transition="slide-in" ng-click="toggleLikeSong(video.stream)">
+          <img style="width:64px" class="media-object pull-left" ng-src="{{video.stream.media$group.media$thumbnail[0].url}}" />
+          <div class="media-body">
+            By {{video.stream.author[0].name.$t}}
+          <p>{{video.stream.media$group.media$title.$t}}</p>
+          </div>
+          <span class="badge">5</span>
+        </a>
       </li>
     </ul>
-  </div>
+
 </div>
 <nav class="bar bar-tab">
   <a class="tab-item" href="#/poc">
