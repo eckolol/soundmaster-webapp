@@ -4,7 +4,7 @@ angular.module('soundMaster', [
   'btford.socket-io'
 ]).
 factory('soundSocket', function (socketFactory) {
-  var soundmasterIoSocket = io.connect('http://localhost:1337');
+  var soundmasterIoSocket = io.connect('http://'+window.location.hostname+':1337');
   
   soundmasterSocket = socketFactory({
     ioSocket: soundmasterIoSocket
