@@ -5,8 +5,12 @@ angular.module('soundMaster')
 
     soundSocket.emit('getPlaylist');
     soundSocket.on('playlist', function (data) {
-      console.log(data);
       $scope.videos=data;
     });
 
+    $scope.toggleLikeSong = function(key) {
+      soundSocket.emit('toggleLikeSong', {
+        key: key
+      });
+    };
   });

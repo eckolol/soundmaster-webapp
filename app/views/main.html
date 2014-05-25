@@ -9,13 +9,13 @@
     <ul class="table-view">
       <li class="table-view-cell table-view-divider">Playlist</li>
       <li class="table-view-cell media" ng-repeat="video in videos">
-        <a class="navigate-right" href="" data-transition="slide-in" ng-click="toggleLikeSong(video.stream)">
-          <img style="width:64px" class="media-object pull-left" ng-src="{{video.stream.media$group.media$thumbnail[0].url}}" />
+        <a class="navigate-right" href="" data-transition="slide-in" ng-click="toggleLikeSong(video.key)">
+          <img style="width:64px" class="media-object pull-left" ng-src="{{video.sound.stream.media$group.media$thumbnail[0].url}}" />
           <div class="media-body">
-            By {{video.stream.author[0].name.$t}}
-          <p>{{video.stream.media$group.media$title.$t}}</p>
+            By {{video.sound.stream.author[0].name.$t}}
+          <p>{{video.sound.stream.media$group.media$title.$t}}</p>
           </div>
-          <span class="badge">5</span>
+          <span class="badge">{{video.like}}</span>
         </a>
       </li>
     </ul>
