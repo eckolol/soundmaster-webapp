@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('soundMaster')
-  .controller('SearchCtrl', function ($scope, $http, soundSocket) {
+  .controller('SearchCtrl', function ($scope, $http, $location, $cookies, soundSocket) {
 
+  $scope.searchSong = $cookies.search;
   $scope.search = function() {
     var search = $scope.searchSong;
     if(search.length>3) {
@@ -16,12 +17,14 @@ angular.module('soundMaster')
           console.log('Error');
         });
     }
+    $cookies.search = search;
   };
 
   $scope.addSong = function(video) {
     soundSocket.emit('playStream', {
       type: 'youtube', stream: video
     });
+    $location.path('/');
   };
 
   });

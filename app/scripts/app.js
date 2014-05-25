@@ -1,6 +1,7 @@
 //'use strict';
 angular.module('soundMaster', [
   'ngRoute',
+  'ngCookies',
   'btford.socket-io'
 ]).
 factory('soundSocket', function (socketFactory) {
