@@ -23,10 +23,6 @@ config(function ($routeProvider) {
       templateUrl: 'views/search.html',
       controller: 'SearchCtrl'
     })
-    .when('/poc', {
-      templateUrl: 'views/poc.html',
-      controller: 'PocCtrl'
-    })
     .otherwise({
       redirectTo: '/'
     });

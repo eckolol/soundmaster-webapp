@@ -1,16 +1,16 @@
 {
   "name": "webapp-soundmaster",
-  "version": "0.0.0",
+  "version": "0.0.5",
   "description": "webapp-soundmaster",
   "main": "",
   "scripts": {
-    "test": "make test"
+    "test": ""
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/eckolol/soundmaster-webapp.git"
   },
-  "author": "",
+  "author": "Jérôme Botineau <jeromebotineau@gmail.com>",
   "license": "GNU GPLV2",
   "bugs": {
     "url": "https://github.com/eckolol/soundmaster-webapp/issues"
